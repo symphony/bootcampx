@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS cohorts, students, assignments, assignment_submissions;
+-- DROP TABLE IF EXISTS cohorts, students, assignments, assignment_submissions;
 
 CREATE TABLE cohorts (
   id INTEGER PRIMARY KEY NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE assignment_submissions (
   submission_date DATE
 );
 
-\i seeds/cohorts.sql
-\i seeds/students.sql
-\i seeds/assignments_seeds.sql
-\i seeds/assignment_submissions_seeds.sql
+-- \i seeds/cohorts.sql
+-- \i seeds/students.sql
+-- \i seeds/assignments_seeds.sql
+-- \i seeds/assignment_submissions_seeds.sql
