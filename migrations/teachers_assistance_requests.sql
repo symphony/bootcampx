@@ -1,3 +1,4 @@
+-- -- deletes all data and rebuilds tables. only use if necessary
 -- DROP TABLE IF EXISTS teachers, assistance_requests;
 
 CREATE TABLE teachers (
