@@ -8,17 +8,17 @@ const pool = new Pool({
   database: process.env.DB
 });
 
-let [,, cohort = 'JUL'] = [...process.argv];
-cohort = `${cohort.toUpperCase()}%`;
-pool.query(`
+const queryString = `
 SELECT teachers.name as name, max(cohorts.name) as cohort
 FROM cohorts
 JOIN students ON cohort_id = cohorts.id
 JOIN assistance_requests ON student_id = students.id
 JOIN teachers ON teachers.id = teacher_id
 WHERE cohorts.name LIKE $1
-GROUP BY teachers.name
-;`, [cohort])
+GROUP BY teachers.name;
+`;
+const values = [`${process.argv[2]?.toUpperCase() || 'JUL'}%`];
+pool.query(queryString, values)
   .then(res => {
     res.rows.forEach(teacher => {
       console.log(`${teacher.cohort}: ${teacher.name}`);
