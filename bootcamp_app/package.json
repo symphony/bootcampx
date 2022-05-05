@@ -1,0 +1,13 @@
+{
+  "name": "bootcamp_app",
+  "version": "1.0.0",
+  "main": "students.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node lib/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
